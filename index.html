@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- 🔐 TELA DE LOGIN/CADASTRO -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-box">
+            <h2>Bem-vindo ao Seu Portfólio</h2>
+            <p>Faça login ou crie sua conta para salvar seus projetos</p>
+
+            <button id="login-google" class="btn btn-google">
+                🔵 Entrar com Google
+            </button>
+
+            <div class="login-or"><span>Ou</span></div>
+
+            <input type="email" id="email" placeholder="Seu email" />
+            <input type="password" id="password" placeholder="Sua senha" />
+            <input type="text" id="nome" placeholder="Seu nome (para cadastro)" style="display: none;" />
+
+            <button id="login-email" class="btn btn-primary">Entrar</button>
+            <button id="toggle-register" class="btn btn-outline">
+                Criar conta
+            </button>
+        </div>
+    </div>
+
+    <!-- 🖼️ CONTEÚDO DO SITE (só aparece depois do login) -->
+    <div id="main-content" style="display: none;">
+
+        <!-- Cabeçalho -->
+        <header>
+            <nav class="navbar">
+                <div class="logo">Portfólio</div>
+                <div class="menu-toggle">☰</div>
+                <button id="logout-btn" class="btn btn-outline btn-logout-navbar">Sair</button>
+            </nav>
+        </header>
+
+        <!-- Hero -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Olá, <span id="user-name">Usuário</span></h1>
+                <p>Gerencie seus projetos aqui</p>
+            </div>
+        </section>
+
+        <!-- Sobre (agora logo abaixo do Hero) -->
+        <section id="sobre" class="sobre">
+            <div class="container sobre-content">
+                <div class="sobre-text">
+                    <h2>Sobre</h2>
+                    <p>Este é um portfólio onde você pode cadastrar e gerenciar seus projetos pessoais.</p>
+                </div>
+                <div class="sobre-img">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Sobre">
+                </div>
+            </div>
+        </section>
+
+        <!-- Projetos -->
+        <section id="projetos" class="projetos">
+            <div class="container">
+                <h2>Meus Projetos</h2>
+                <button id="add-project" class="btn btn-add">+ Adicionar Projeto</button>
+                <div class="projetos-grid" id="projetos-container">
+                    <!-- Projetos aparecem aqui -->
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Modal Adicionar -->
+    <div id="modal-add" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Adicionar Projeto</h2>
+            <form id="form-projeto">
+                <input type="text" id="titulo" placeholder="Título" required />
+                <input type="text" id="imagem" placeholder="URL da imagem (opcional)" />
+                <input type="text" id="link" placeholder="Link (opcional)" />
+                <textarea id="descricao" placeholder="Descrição (opcional)" rows="3"></textarea>
+                <button type="submit" class="btn">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Seu script principal -->
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
